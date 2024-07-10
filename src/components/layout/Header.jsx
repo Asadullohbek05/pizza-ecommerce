@@ -41,7 +41,7 @@ const Header = () => {
                         <div className="flex items-center sm:gap-10 sm:w-auto w-full justify-between">
                             <div className="flex items-center sm:gap-2">
                                 <img src={locationIcon} alt="location" />
-                                <select className="outline-none text-[14px]">
+                                <select className="outline-none text-[14px] bg-white">
                                     <option>Москва</option>
                                     <option>Пермь</option>
                                     <option>Сочи</option>
