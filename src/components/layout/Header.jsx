@@ -34,7 +34,7 @@ const Header = () => {
     }
 
     return (
-        <nav className="bg-white h-[1000px]">
+        <nav className="bg-white sticky top-0 z-50">
             <div className="border-b">
                 <div className="max-w-[1330px] px-5 mx-auto ">
                     <div className="py-[9px] sm:py-[11px] flex flex-wrap sm:gap-3 lg:justify-between md:justify-evenly sm:justify-evenly items-center">
@@ -49,7 +49,11 @@ const Header = () => {
                                 </select>
                             </div>
                             <p className="hidden sm:block text-[14px] text-[#191919]">Проверить адрес</p>
-                            <p className="text-[12px] sm:text-[14px] text-[#191919]">Среднее время доставки*: <span className="font-semibold">00:24:19</span></p>
+                            <p className="hidden sm:block text-[12px] sm:text-[14px] text-[#191919]">Среднее время доставки*: <span className="font-semibold">00:24:19</span></p>
+                            <select className="select select-sm select-bordered">
+                                <option>UZ</option>
+                                <option>EN</option>
+                            </select>
                         </div>
                         <div className="flex gap-10">
                             <p className="hidden sm:block font-normal text-[14px] text-[#191919]">Время работы: c 11:00 до 23:00</p>
@@ -113,7 +117,7 @@ const Header = () => {
                         }
                     </div>
                 </div>
-                <div className={`fixed ${visible ? 'left-0' : 'left-[-100%]'} w-full h-full`}>
+                <div className={`fixed ${visible ? 'left-0' : 'left-[-100%]'} w-full h-full bg-white`}>
                     <button className="flex font-normal w-full p-5  items-center gap-4 text-[16px] text-[#000000] border-b"><img src={profileIcon} alt="profileIcon" /> Войти в аккаунт</button>
                     <ul className="flex flex-col p-5 border-b gap-3">
                         <li>
