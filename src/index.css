@@ -12,8 +12,13 @@
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
 }
 
-body {
-  background-color: #f9f9f9;
+.ownCard:hover img {
+  transform: scale(1.05);
+}
+
+.ownCard img {
+  transition: 0.3s;
 }
