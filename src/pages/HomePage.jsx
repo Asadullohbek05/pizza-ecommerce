@@ -16,8 +16,15 @@ import categories from './../data/categories';
 import products from './../data/Products';
 import filterIcon from "../assets/svg/Filter.svg"
 import ProductCard from "../components/card/ProductCard"
+import { useState } from "react"
 
 const HomePage = () => {
+    const [open, setOpen] = useState(true)
+
+    const openText = () => {
+        setOpen(!open)
+    }
+
     return (
         <div className="max-w-[1330px] px-5 mx-auto">
             <div className="my-4 sm:my-7 flex justify-between gap-3 overflow-x-auto">
@@ -73,7 +80,7 @@ const HomePage = () => {
                 {
                     categories.map((category) => (
                         <div key={category.id}>
-                            <div className="flex justify-between items-center mb-7">
+                            <div className="flex justify-between items-center my-6">
                                 <h1 className="text-[28px] sm:text-[40px] font-semibold text-[#191919]">{category.name}</h1>
                                 <button className="flex items-center gap-2 bg-white py-2 px-3 sm:px-4 border text-[16px] rounded-[6px] text-[#191919]"><img src={filterIcon} alt="" /> Фильтры</button>
                             </div>
@@ -88,7 +95,20 @@ const HomePage = () => {
                         </div>
                     ))
                 }
-
+            </div>
+            <div className="mx-auto max-w-[850px]  mt-7 mb-8">
+                <div className={`overflow-hidden ${open ? 'h-[200px]' : 'h-auto'} sm:${open ? 'h-[300px]' : 'h-auto'}`}>
+                    <h1 className="text-[18px] sm:text-[32px] text-[#191919] font-semibold mb-3 sm:mb-4">Доставка пиццы в Москве</h1>
+                    <p className="text-[14px] sm:text-[16px] mb-4">Захотелось чего-то вкусного и сытного? Желание простое и понятное, только в холодильнике все не то, и до магазина идти лень. Все пропало? Нет. Недорого заказать пиццу в Москве очень просто! Вам на помощь спешит супергерой – Domino’s Pizza! Как у всякого супергероя, у Domino’s Pizza есть свои суперсилы: восхитительный вкус продукции из отборных ингредиентов; широкий ассортимент, включающий легендарные, фирменные и классические виды, для вегетарианцев и любителей экспериментировать; быстрая и бесплатная доставка пиццы в течение 30 минут, чтобы вкусное и ароматное блюдо не успевало остыть.
+                    </p>
+                    <h2 className="text-[18px] sm:text-[20px] font-semibold">Как сделать заказ</h2>
+                    <p className="text-[14px] sm:text-[16px]">
+                        Доставка пиццы от Domino’s – это когда Вам не нужно никуда ехать или звонить, ведь есть Интернет. Никогда еще заказ пиццы на дом в Москве не был таким простым! Чтобы заказать пиццу онлайн, Вам необходимо: ...  выбрать понравившийся вариант и количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!выбрать понравившийся вариант и количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!выбрать понравившийся вариант и количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!
+                    </p>
+                </div>
+                <button onClick={openText} className="text-[#FF7010] text-[16px] font-semibold mt-4">
+                    Показать {open ? "полностью" : 'кратко'}
+                </button>
             </div>
         </div>
     )
