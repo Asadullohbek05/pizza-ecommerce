@@ -22,3 +22,11 @@ body {
 .ownCard img {
   transition: 0.3s;
 }
+
+.heartIcon {
+  transition: 0.5s;
+}
+
+.ownCard:hover .heartIcon {
+  right: 30px;
+}
