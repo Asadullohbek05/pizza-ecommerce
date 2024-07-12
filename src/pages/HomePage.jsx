@@ -16,9 +16,12 @@ import categories from './../data/categories';
 import products from './../data/Products';
 import filterIcon from "../assets/svg/Filter.svg"
 import ProductCard from "../components/card/ProductCard"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import CartButton from "../components/cartButton/CartButton"
+import { LanguageContext } from "../context/LanguageContext"
 
 const HomePage = () => {
+    const { lang } = useContext(LanguageContext)
     const [open, setOpen] = useState(true)
 
     const openText = () => {
@@ -30,35 +33,35 @@ const HomePage = () => {
             <div className="my-4 sm:my-7 flex justify-between gap-3 overflow-x-auto">
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={fireIcon} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Акции</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.stock}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={pizza} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Пицца</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.pizza}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={sushi} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Суши</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.sushi}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={drink} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Напитки</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.beverages}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={snacks} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Закуски</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.snacks}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={combo} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Комбо</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.combo}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={desert} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Десерты</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.dessert}</span>
                 </Link>
                 <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={souse} alt="" />
-                    <span className="text-[14px] sm:text-[18px]">Соусы</span>
+                    <span className="text-[14px] sm:text-[18px]">{lang.sauces}</span>
                 </Link>
             </div>
             <div className="flex justify-between flex-wrap gap-4 overflow-x-auto ">
@@ -67,13 +70,13 @@ const HomePage = () => {
                 }
             </div>
             <form className="md:flex items-center justify-between gap-2 px-8 py-4 border bg-white rounded-[8px] mt-5 mb-7">
-                <h3 className="text-[18px] text-center md:text-left mb-4 lg:mb-0">Проверить адрес доставки</h3>
+                <h3 className="text-[18px] text-center md:text-left mb-4 lg:mb-0">{lang.checkDeliveryAddress}</h3>
                 <div className="flex w-full md:w-[80%] justify-between sm:gap-2">
                     <div className="flex border rounded-[6px] w-[82%] px-3 ">
                         <img src={locationIcon} className="me-2" alt="" />
-                        <input required className="h-[48px] w-[90%] outline-none" type="text" placeholder="Адрес" />
+                        <input required className="h-[48px] w-[90%] outline-none" type="text" placeholder={lang.address} />
                     </div>
-                    <button className="bg-[#FF7010] flex items-center px-4 py-3 sm:py-3 sm:px-8 rounded-[6px] text-white text-[16px]"><span className="hidden sm:block">Проверить</span> <img className="sm:hidden" src={sendIcon} alt="" /></button>
+                    <button className="bg-[#FF7010] flex items-center px-4 py-3 sm:py-3 sm:px-8 rounded-[6px] text-white text-[16px]"><span className="hidden sm:block">{lang.check}</span> <img className="sm:hidden" src={sendIcon} alt="" /></button>
                 </div>
             </form>
             <div>
@@ -98,18 +101,19 @@ const HomePage = () => {
             </div>
             <div className="mx-auto max-w-[850px]  mt-7 mb-8">
                 <div className={`overflow-hidden ${open ? 'h-[200px]' : 'h-auto'} sm:${open ? 'h-[300px]' : 'h-auto'}`}>
-                    <h1 className="text-[18px] sm:text-[32px] text-[#191919] font-semibold mb-3 sm:mb-4">Доставка пиццы в Москве</h1>
-                    <p className="text-[14px] sm:text-[16px] mb-4">Захотелось чего-то вкусного и сытного? Желание простое и понятное, только в холодильнике все не то, и до магазина идти лень. Все пропало? Нет. Недорого заказать пиццу в Москве очень просто! Вам на помощь спешит супергерой – Domino’s Pizza! Как у всякого супергероя, у Domino’s Pizza есть свои суперсилы: восхитительный вкус продукции из отборных ингредиентов; широкий ассортимент, включающий легендарные, фирменные и классические виды, для вегетарианцев и любителей экспериментировать; быстрая и бесплатная доставка пиццы в течение 30 минут, чтобы вкусное и ароматное блюдо не успевало остыть.
+                    <h1 className="text-[18px] sm:text-[32px] text-[#191919] font-semibold mb-3 sm:mb-4">{lang.pizzaDeliveryInMoscow}</h1>
+                    <p className="text-[14px] sm:text-[16px] mb-4">{lang.deliveryText1}
                     </p>
-                    <h2 className="text-[18px] sm:text-[20px] font-semibold">Как сделать заказ</h2>
+                    <h2 className="text-[18px] sm:text-[20px] font-semibold">{lang.howToMakeOrder}</h2>
                     <p className="text-[14px] sm:text-[16px]">
-                        Доставка пиццы от Domino’s – это когда Вам не нужно никуда ехать или звонить, ведь есть Интернет. Никогда еще заказ пиццы на дом в Москве не был таким простым! Чтобы заказать пиццу онлайн, Вам необходимо: ...  выбрать понравившийся вариант и количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!выбрать понравившийся вариант и количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!выбрать понравившийся вариант и количество порций; положить желаемое в «Корзину»; не уходить далеко, так как вкусная пицца на заказ с доставкой уже мчится к Вам из ближайшей пиццерии Domino’s. И не забудьте оплатить заказ курьеру!
+                        {lang.deliveryText2}
                     </p>
                 </div>
                 <button onClick={openText} className="text-[#FF7010] text-[16px] font-semibold mt-4">
-                    Показать {open ? "полностью" : 'кратко'}
+                    {open ? lang.ShowFull : lang.ShowBriefly}
                 </button>
             </div>
+            <CartButton />
         </div>
     )
 }

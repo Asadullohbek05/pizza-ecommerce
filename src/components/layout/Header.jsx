@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import locationIcon from "../../assets/svg/Location.svg";
 import profileIcon from "../../assets/svg/Account.svg";
@@ -12,8 +12,11 @@ import phoneIcon from "../../assets/svg/phone.svg"
 import location2 from "../../assets/svg/location-2.svg"
 import facebook from "../../assets/svg/facebook.svg"
 import instagram from "../../assets/svg/instagram.svg"
+import { LanguageContext } from "../../context/LanguageContext";
+import { toast } from "react-toastify";
 
 const Header = () => {
+    const { lang, langType, setLangType } = useContext(LanguageContext)
     const [scrollHeight, setScrollHeight] = useState(0);
     const [visible, setVisible] = useState(false)
 
@@ -28,9 +31,18 @@ const Header = () => {
         };
     }, []);
 
-
     const toggleNav = () => {
         setVisible(!visible)
+    }
+
+    const changeLanguage = (e) => {
+        if (e.target.value === 'ru') {
+            toast.success('Язык изменен на русский')
+        } else {
+            toast.success("Til rus tiliga o'zgartirildi")
+        }
+        setLangType(e.target.value)
+        localStorage.setItem('language', e.target.value)
     }
 
     return (
@@ -42,22 +54,22 @@ const Header = () => {
                             <div className="flex items-center sm:gap-2">
                                 <img src={locationIcon} alt="location" />
                                 <select className="outline-none text-[14px] bg-white">
-                                    <option>Москва</option>
-                                    <option>Пермь</option>
-                                    <option>Сочи</option>
-                                    <option>Казань</option>
+                                    <option>{lang.moscow}</option>
+                                    <option>{lang.permian}</option>
+                                    <option>{lang.sochi}</option>
+                                    <option>{lang.kazan}</option>
                                 </select>
                             </div>
-                            <p className="hidden sm:block text-[14px] text-[#191919]">Проверить адрес</p>
-                            <p className="hidden sm:block text-[12px] sm:text-[14px] text-[#191919]">Среднее время доставки*: <span className="font-semibold">00:24:19</span></p>
-                            <select className="select select-sm select-bordered">
-                                <option>UZ</option>
-                                <option>EN</option>
+                            <p className="hidden sm:block text-[14px] text-[#191919]">{lang.checkAddress}</p>
+                            <p className="hidden sm:block text-[12px] sm:text-[14px] text-[#191919]">{lang.averageDeliveryTime}*: <span className="font-semibold">00:24:19</span></p>
+                            <select value={langType} onChange={(e) => changeLanguage(e)} className="select select-sm select-bordered">
+                                <option value='ru'>RU</option>
+                                <option value='uz'>UZ</option>
                             </select>
                         </div>
                         <div className="flex gap-10">
-                            <p className="hidden sm:block font-normal text-[14px] text-[#191919]">Время работы: c 11:00 до 23:00</p>
-                            <button className="hidden sm:flex font-normal items-center gap-2 text-[14px] text-[#191919]"><img src={profileIcon} alt="profileIcon" /> Войти в аккаунт</button>
+                            <p className="hidden sm:block font-normal text-[14px] text-[#191919]">{lang.openingHours}</p>
+                            <button className="hidden sm:flex font-normal items-center gap-2 text-[14px] text-[#191919]"><img src={profileIcon} alt="profileIcon" /> {lang.loginAccount} </button>
                         </div>
                     </div>
                 </div>
@@ -69,41 +81,41 @@ const Header = () => {
                         <div className="hidden lg:block">
                             <ul className={`flex items-center gap-7 ${scrollHeight > 44 ? 'block' : 'hidden'}`}>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Акции</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.stock}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Пицца</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.pizza}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Суши</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.sushi}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Напитки</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.beverages}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Закуски</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.snacks}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Комбо</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.combo}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Десерты</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.dessert}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Соусы</Link>
+                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.sauces}</Link>
                                 </li>
                                 <li>
                                     <div className="dropdown dropdown-hover">
-                                        <div tabIndex={0} role="button" className="flex items-center gap-2 m-1 text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">Другое <img src={arrowIcon} alt="" /></div>
+                                        <div tabIndex={0} role="button" className="flex items-center gap-2 m-1 text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.other} <img src={arrowIcon} alt="" /></div>
                                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[285px] p-2 shadow left-[-100px]">
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Акции</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>О компании</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Пользовательское соглашение</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Условия гарантии</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Ресторан</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Контакты</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Поддержка</Link></li>
-                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>Отследить заказ</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.stock}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.aboutCompany}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.termsOfUse}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.warrantTterms}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.restaurant}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.contacts}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.support}</Link></li>
+                                            <li><Link className="text-[#191919] font-medium text-[16px]" to={''}>{lang.trackYourOrder}</Link></li>
 
                                         </ul>
                                     </div>
