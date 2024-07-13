@@ -15,7 +15,7 @@ const LanguageContextProvider = ({ children }) => {
         if (e.target.value === 'ru') {
             toast.success('Язык изменен на русский')
         } else {
-            toast.success("Til rus tiliga o'zgartirildi")
+            toast.success("Til O'zbek tiliga o'zgartirildi")
         }
         setLangType(e.target.value)
         localStorage.setItem(LANGUAGE, e.target.value)

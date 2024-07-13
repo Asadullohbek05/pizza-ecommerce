@@ -16,7 +16,7 @@ import { LanguageContext } from "../../context/LanguageContext";
 import { ProductsContext } from "../../context/ProductsContext";
 
 const Header = () => {
-    const { cart } = useContext(ProductsContext)
+    const { cart, isRunning, setIsRunning } = useContext(ProductsContext)
     const { lang, langType, changeLanguage } = useContext(LanguageContext)
     const [scrollHeight, setScrollHeight] = useState(0);
     const [visible, setVisible] = useState(false)
@@ -36,6 +36,42 @@ const Header = () => {
         setVisible(!visible)
     }
 
+    // --------------------------------------------------------------
+
+    const [time, setTime] = useState(45 * 60); // 45 minutes in seconds
+
+
+    useEffect(() => {
+        let interval = null;
+
+        if (isRunning) {
+            interval = setInterval(() => {
+                setTime(prevTime => {
+                    if (prevTime <= 0) {
+                        clearInterval(interval);
+                        return 0;
+                    }
+                    return prevTime - 1;
+                });
+            }, 1000);
+        } else if (!isRunning && time !== 0) {
+            clearInterval(interval);
+        }
+
+        return () => clearInterval(interval); // Clear interval on component unmount
+    }, [isRunning, time]);
+
+    const formatTime = (timeInSeconds) => {
+        const hours = Math.floor(timeInSeconds / 3600);
+        const minutes = Math.floor((timeInSeconds % 3600) / 60);
+        const seconds = timeInSeconds % 60;
+
+        const padTime = (time) => String(time).padStart(2, '0');
+
+        return `${padTime(hours)}:${padTime(minutes)}:${padTime(seconds)}`;
+    };
+
+
 
 
     return (
@@ -54,7 +90,7 @@ const Header = () => {
                                 </select>
                             </div>
                             <p className="hidden sm:block text-[14px] text-[#191919]">{lang.checkAddress}</p>
-                            <p className="hidden sm:block text-[12px] sm:text-[14px] text-[#191919]">{lang.averageDeliveryTime}*: <span className="font-semibold">00:24:19</span></p>
+                            <p className="hidden sm:block text-[12px] sm:text-[14px] text-[#191919]">{lang.averageDeliveryTime}*: <span className="font-semibold">{formatTime(time)}</span></p>
                             <select value={langType} onChange={changeLanguage} className="select select-sm select-bordered">
                                 <option value='ru'>RU</option>
                                 <option value='uz'>UZ</option>

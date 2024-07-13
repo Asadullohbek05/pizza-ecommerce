@@ -1,15 +1,18 @@
 import PropTypes from "prop-types"
 
-import { createContext, useState, } from "react";
+import { createContext, useContext, useState, } from "react";
 import products from "../data/Products";
 import { CART } from "../constants";
 import { toast } from "react-toastify";
+import { LanguageContext } from "./LanguageContext";
 
 export const ProductsContext = createContext();
 
 
 const ProductsContextProvider = ({ children }) => {
-    const [cart, setCart] = useState(JSON.parse(localStorage.getItem(CART)) || [])
+    let [cart, setCart] = useState(JSON.parse(localStorage.getItem(CART)) || [])
+    const { lang } = useContext(LanguageContext)
+    const [isRunning, setIsRunning] = useState(false); // Track if the timer is running
 
     const controlQuantity = (id, sign) => {
         let res = cart.map((product) => {
@@ -53,6 +56,7 @@ const ProductsContextProvider = ({ children }) => {
             newCart = controlQuantity(id, '-')
         } else {
             newCart = cart.filter((pr) => pr.id !== id)
+            toast.info(lang.productRemoveFromCart)
         }
 
         setCart(newCart)
@@ -61,7 +65,7 @@ const ProductsContextProvider = ({ children }) => {
 
     let totalSumm = cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
 
-    const state = { cart, addToCart, increaseQuantity, decreaseQuantity, totalSumm }
+    const state = { cart, addToCart, increaseQuantity, setCart, decreaseQuantity, totalSumm, isRunning, setIsRunning }
 
 
     return <ProductsContext.Provider value={state}>

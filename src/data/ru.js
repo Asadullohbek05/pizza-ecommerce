@@ -38,6 +38,12 @@ const RU = {
     yourOrder: 'Ваш заказ',
     promocode: 'Промокод',
     total: 'Итого',
+    promocodeNotFound: 'промокод не найден',
+    productRemoveFromCart: 'Товар удален из корзиныi',
+    order: "Заказ №310202 принят",
+    thanks: "Спасибо за заказ!",
+    thanksText: "Примерное время доставки 45 минут. Статус отследить можно нажав на кнопку ниже",
+    trackOrder: "Отследить заказ"
 }
 
 export default RU
