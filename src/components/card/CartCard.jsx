@@ -12,7 +12,7 @@ const CartCard = ({ id, category, filter, image, name, description, price, quant
                     <h4 className='text-[14px] sm:text-[20px] font-semibold mb-2'>{name}</h4>
                     <h4 className='text-[12px] sm:text-[16px]'>{description.slice(0, 30)}</h4>
                 </div>
-                <div className='flex items-center gap-10 mt-3 sm:mt-0'>
+                <div className='flex items-center gap-8 sm:gap-10 mt-3 sm:mt-0'>
                     <ControlQuantityBtns id={id} quantity={quantity} />
                     <p className='text-[#FF7010] text-[16px] sm:text-[20px] font-semibold'>{price * quantity} ₽</p>
                 </div>

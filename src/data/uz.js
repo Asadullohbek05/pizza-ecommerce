@@ -43,7 +43,8 @@ const UZ = {
     order: "310202-sonli buyurtma qabul qilindi",
     thanks: "Buyurtma uchun rahmat!",
     thanksText: "Taxminan etkazib berish vaqti 45 daqiqa.Quyidagi tugmani bosish orqali holatingizni kuzatishingiz mumkin.",
-    trackOrder: "Buyurtmangizni kuzatib boring"
+    trackOrder: "Buyurtmangizni kuzatib boring",
+    empty: "Sizning savatingizda hozircha hech qanday mahsulot yo'q :("
 }
 
 export default UZ

@@ -35,7 +35,7 @@ const CartPage = () => {
                     cart.length > 0 ? cart.map((card) => <CartCard key={card.id} {...card} />) :
                         <div className="flex flex-col items-center">
                             <img src={cat} className="w-[200px]" />
-                            <h1 className="text-[20px] text-center px-4 my-2 text-[#FF7010]">В вашей корзине на данный момент нет товаров :(</h1>
+                            <h1 className="text-[20px] text-center px-4 my-2 text-[#FF7010]">{lang.empty}</h1>
                         </div>
                 }
             </div>
