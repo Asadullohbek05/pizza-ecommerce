@@ -3,10 +3,15 @@ import { useContext } from 'react';
 
 import { FaRegHeart } from 'react-icons/fa';
 import { LanguageContext } from '../../context/LanguageContext';
+import { ProductsContext } from '../../context/ProductsContext';
 
 
-const ProductCard = ({ filter, image, name, description, price }) => {
+const ProductCard = ({ id, filter, image, name, description, price }) => {
+    const { cart, addToCart, increaseQuantity, decreaseQuantity } = useContext(ProductsContext)
     const { lang } = useContext(LanguageContext)
+
+    const productInCart = cart.find((pr) => pr.id === id)
+
     return (
         <div className="w-full sm:w-[300px] items-center h-auto flex flex-row sm:flex-col justify-between border rounded-[12px] bg-white mb-3 sm:mb-[30px] ownCard overflow-hidden">
             <div className="relative mb-1 py-2 sm:py-0 h-full flex justify-center items-center sm:w-auto w-[30%] overflow-hidden">
@@ -20,8 +25,17 @@ const ProductCard = ({ filter, image, name, description, price }) => {
                 <h3 className="text-[#191919] text-[14px] sm:text-[18px] font-semibold mb-1 sm:mb-3">{name}</h3>
                 <p className="text-[#191919] text-[12px] sm:text-[16px] mb-[10px] sm:mb-4">{description}</p>
                 <div className="flex justify-between items-center text-[#FF7010] text-[18px] font-semibold sm:gap-5">
-                    <button className="bg-[#FF7010] hover:opacity-[0.8] rounded-[6px] text-white font-thin px-3 py-1 sm:px-8 sm:py-[13px] text-[16px]">{lang.addToCart}</button>
-                    <span>от {price} ₽</span>
+                    {
+                        productInCart ? <div>
+                            <div className="join ">
+                                <button onClick={() => decreaseQuantity(id)} className="btn join-item text-[#FF7010] font-bold">-</button>
+                                <button className="btn join-item text-[#FF7010] text-[16px] font-bold">{productInCart.quantity}</button>
+                                <button onClick={() => increaseQuantity(id)} className="btn join-item text-[#FF7010] font-bold">+</button>
+                            </div>
+                        </div>
+                            : <button onClick={() => addToCart(id)} className="bg-[#FF7010] hover:opacity-[0.8] rounded-[6px] text-white font-normal px-3 py-1 sm:px-8 sm:py-[13px] text-[16px]">{lang.addToCart}</button>
+                    }
+                    <span className='font-inter'>от {price} ₽</span>
                 </div>
                 <button className='block sm:hidden absolute right-2 top-2 p-1 text-white'>
                     <FaRegHeart color='#E23535' size={20} />
@@ -36,7 +50,7 @@ ProductCard.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    filter: PropTypes.string.isRequired,
+    filter: PropTypes.string,
     category: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
 };

@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import LanguageContextProvider from './context/LanguageContext.jsx'
@@ -6,12 +5,13 @@ import LanguageContextProvider from './context/LanguageContext.jsx'
 import './index.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
+import ProductsContextProvider from './context/ProductsContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <LanguageContextProvider>
+  <LanguageContextProvider>
+    <ProductsContextProvider>
       <App />
-      <ToastContainer autoClose={2000} />
-    </LanguageContextProvider>
-  </React.StrictMode>,
+    </ProductsContextProvider>
+    <ToastContainer autoClose={2000} />
+  </LanguageContextProvider>
 )

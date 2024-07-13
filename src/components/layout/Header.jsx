@@ -13,10 +13,11 @@ import location2 from "../../assets/svg/location-2.svg"
 import facebook from "../../assets/svg/facebook.svg"
 import instagram from "../../assets/svg/instagram.svg"
 import { LanguageContext } from "../../context/LanguageContext";
-import { toast } from "react-toastify";
+import { ProductsContext } from "../../context/ProductsContext";
 
 const Header = () => {
-    const { lang, langType, setLangType } = useContext(LanguageContext)
+    const { cart } = useContext(ProductsContext)
+    const { lang, langType, changeLanguage } = useContext(LanguageContext)
     const [scrollHeight, setScrollHeight] = useState(0);
     const [visible, setVisible] = useState(false)
 
@@ -35,15 +36,7 @@ const Header = () => {
         setVisible(!visible)
     }
 
-    const changeLanguage = (e) => {
-        if (e.target.value === 'ru') {
-            toast.success('Язык изменен на русский')
-        } else {
-            toast.success("Til rus tiliga o'zgartirildi")
-        }
-        setLangType(e.target.value)
-        localStorage.setItem('language', e.target.value)
-    }
+
 
     return (
         <nav className="bg-white sticky top-0 z-50">
@@ -62,7 +55,7 @@ const Header = () => {
                             </div>
                             <p className="hidden sm:block text-[14px] text-[#191919]">{lang.checkAddress}</p>
                             <p className="hidden sm:block text-[12px] sm:text-[14px] text-[#191919]">{lang.averageDeliveryTime}*: <span className="font-semibold">00:24:19</span></p>
-                            <select value={langType} onChange={(e) => changeLanguage(e)} className="select select-sm select-bordered">
+                            <select value={langType} onChange={changeLanguage} className="select select-sm select-bordered">
                                 <option value='ru'>RU</option>
                                 <option value='uz'>UZ</option>
                             </select>
@@ -122,7 +115,7 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
-                        <button className="bg-[#FF7010] hidden lg:flex items-center justify-center px-4 py-2 w-[90px] gap-2 rounded text-white text-[16px]"><img src={shoppingBag} alt="Shopping bag" /> 0 ₽</button>
+                        <Link to='/cart' className="bg-[#FF7010] hidden lg:flex items-center justify-center px-4 py-2 w-[70px] gap-2 rounded text-white text-[16px]"><img src={shoppingBag} alt="Shopping bag" /> {cart.length}</Link>
                         {
                             visible ? <button onClick={toggleNav} className="lg:hidden"><img width={32} height={20} src={closeIcon} alt="" /></button>
                                 : <button onClick={toggleNav} className="lg:hidden"><img width={32} height={20} src={hamburgerBtn} alt="" /></button>

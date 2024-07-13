@@ -70,7 +70,7 @@ const HomePage = () => {
                 }
             </div>
             <form className="md:flex items-center justify-between gap-2 px-8 py-4 border bg-white rounded-[8px] mt-5 mb-7">
-                <h3 className="text-[18px] text-center md:text-left mb-4 lg:mb-0">{lang.checkDeliveryAddress}</h3>
+                <h3 className="text-[17px] text-center md:text-left mb-4 lg:mb-0">{lang.checkDeliveryAddress}</h3>
                 <div className="flex w-full md:w-[80%] justify-between sm:gap-2">
                     <div className="flex border rounded-[6px] w-[82%] px-3 ">
                         <img src={locationIcon} className="me-2" alt="" />
