@@ -4,8 +4,10 @@ import CartCard from "../components/card/CartCard";
 import cat from "../assets/cat.png"
 import { LanguageContext } from './../context/LanguageContext';
 
+import sendIcon from "../assets/svg/sendIcon.svg"
+
 const CartPage = () => {
-    const { cart } = useContext(ProductsContext)
+    const { cart, totalSumm } = useContext(ProductsContext)
     const { lang } = useContext(LanguageContext)
     return (
         <div className="max-w-[850px] mx-auto pt-10 pb-14 px-4">
@@ -19,6 +21,18 @@ const CartPage = () => {
                         </div>
                 }
             </div>
+            {
+                cart.length ?
+                    <form className="py-4 px-6 flex-row  sm:flex justify-between items-center gap-4 sm:gap-1  bg-white border rounded-[8px]">
+                        <div className="flex justify-center">
+                            <input required type="text" placeholder={lang.promocode} className="input input-bordered w-full max-w-xs" />
+                            <button className="btn bg-[#FF7010]">
+                                <img src={sendIcon} alt="" />
+                            </button>
+                        </div>
+                        <h2 className="text-[18px] sm:text-[20px] text-[#FF7010] mt-4 sm:mt-0 text-center font-semibold">{lang.total}: {totalSumm} ₽</h2>
+                    </form> : ''
+            }
         </div>
     )
 }

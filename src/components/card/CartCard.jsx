@@ -14,7 +14,7 @@ const CartCard = ({ id, category, filter, image, name, description, price, quant
                 </div>
                 <div className='flex items-center gap-10 mt-3 sm:mt-0'>
                     <ControlQuantityBtns id={id} quantity={quantity} />
-                    <p className='text-[#FF7010] text-[16px] sm:text-[20px] font-semibold'>399 ₽</p>
+                    <p className='text-[#FF7010] text-[16px] sm:text-[20px] font-semibold'>{price * quantity} ₽</p>
                 </div>
             </div>
         </div>
@@ -29,6 +29,7 @@ CartCard.propTypes = {
     filter: PropTypes.string,
     category: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired,
 };
 
 export default CartCard

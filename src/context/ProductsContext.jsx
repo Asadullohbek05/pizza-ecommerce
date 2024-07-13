@@ -59,9 +59,10 @@ const ProductsContextProvider = ({ children }) => {
         localStorage.setItem(CART, JSON.stringify(newCart))
     }
 
-    const state = { cart, addToCart, increaseQuantity, decreaseQuantity }
+    let totalSumm = cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
 
-    console.log(cart)
+    const state = { cart, addToCart, increaseQuantity, decreaseQuantity, totalSumm }
+
 
     return <ProductsContext.Provider value={state}>
         {children}

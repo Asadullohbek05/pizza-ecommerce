@@ -35,7 +35,9 @@ const UZ = {
     Help: "Yordam",
     location: "Moskva, Yunix Lenintsev ko'chasi 99 uy",
     addToCart: "qo'shish",
-    yourOrder: 'Sizning Buyurtmangiz'
+    yourOrder: 'Sizning Buyurtmangiz',
+    promocode: 'Promokod',
+    total: 'Jami',
 }
 
 export default UZ

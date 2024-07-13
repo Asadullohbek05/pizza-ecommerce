@@ -7,9 +7,9 @@ const ControlQuantityBtns = ({ id, quantity }) => {
     return (
         <div>
             <div className="join ">
-                <button onClick={() => decreaseQuantity(id)} className="btn-sm sm:btn join-item sm:text-[#FF7010] font-bold">-</button>
+                <button onClick={() => decreaseQuantity(id)} className="btn-sm sm:btn join-item sm:text-[#FF7010] sm:font-bold">-</button>
                 <button className="btn-sm sm:btn join-item sm:text-[#FF7010] text-[16px] sm:font-bold">{quantity}</button>
-                <button onClick={() => increaseQuantity(id)} className="btn-sm sm:btn join-item sm:text-[#FF7010] font-bold">+</button>
+                <button onClick={() => increaseQuantity(id)} className="btn-sm sm:btn join-item sm:text-[#FF7010] sm:font-bold">+</button>
             </div>
         </div>
     )

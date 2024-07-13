@@ -36,6 +36,8 @@ const RU = {
     location: "Москва, ул. Юных Ленинцев, д.99",
     addToCart: "добавить",
     yourOrder: 'Ваш заказ',
+    promocode: 'Промокод',
+    total: 'Итого',
 }
 
 export default RU
