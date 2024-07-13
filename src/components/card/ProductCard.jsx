@@ -4,10 +4,11 @@ import { useContext } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import { LanguageContext } from '../../context/LanguageContext';
 import { ProductsContext } from '../../context/ProductsContext';
+import ControlQuantityBtns from '../shares/ControlQuantityBtns';
 
 
 const ProductCard = ({ id, filter, image, name, description, price }) => {
-    const { cart, addToCart, increaseQuantity, decreaseQuantity } = useContext(ProductsContext)
+    const { cart, addToCart } = useContext(ProductsContext)
     const { lang } = useContext(LanguageContext)
 
     const productInCart = cart.find((pr) => pr.id === id)
@@ -26,13 +27,7 @@ const ProductCard = ({ id, filter, image, name, description, price }) => {
                 <p className="text-[#191919] text-[12px] sm:text-[16px] mb-[10px] sm:mb-4">{description}</p>
                 <div className="flex justify-between items-center text-[#FF7010] text-[18px] font-semibold sm:gap-5">
                     {
-                        productInCart ? <div>
-                            <div className="join ">
-                                <button onClick={() => decreaseQuantity(id)} className="btn join-item text-[#FF7010] font-bold">-</button>
-                                <button className="btn join-item text-[#FF7010] text-[16px] font-bold">{productInCart.quantity}</button>
-                                <button onClick={() => increaseQuantity(id)} className="btn join-item text-[#FF7010] font-bold">+</button>
-                            </div>
-                        </div>
+                        productInCart ? <ControlQuantityBtns id={id} quantity={productInCart.quantity} />
                             : <button onClick={() => addToCart(id)} className="bg-[#FF7010] hover:opacity-[0.8] rounded-[6px] text-white font-normal px-3 py-1 sm:px-8 sm:py-[13px] text-[16px]">{lang.addToCart}</button>
                     }
                     <span className='font-inter'>от {price} ₽</span>
