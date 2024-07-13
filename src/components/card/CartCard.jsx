@@ -7,7 +7,7 @@ const CartCard = ({ id, category, filter, image, name, description, price, quant
             <div className='mr-3'>
                 <img className='w-[100px] sm:w-[150px]' src={image} />
             </div>
-            <div className='sm:flex justify-between sm:w-full'>
+            <div className='sm:flex justify-between w-[70%] sm:w-full'>
                 <div className='flex flex-col'>
                     <h4 className='text-[14px] sm:text-[20px] font-semibold mb-2'>{name}</h4>
                     <h4 className='text-[12px] sm:text-[16px]'>{description.slice(0, 30)}</h4>
