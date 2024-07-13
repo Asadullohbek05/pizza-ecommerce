@@ -34,7 +34,8 @@ const UZ = {
     ShowBriefly: "Qisqacha ko'rsatish",
     Help: "Yordam",
     location: "Moskva, Yunix Lenintsev ko'chasi 99 uy",
-    addToCart: "qo'shish"
+    addToCart: "qo'shish",
+    yourOrder: 'Sizning Buyurtmangiz'
 }
 
 export default UZ

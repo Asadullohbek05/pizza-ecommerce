@@ -2,12 +2,14 @@ import { useContext } from "react"
 import { ProductsContext } from './../context/ProductsContext';
 import CartCard from "../components/card/CartCard";
 import cat from "../assets/cat.png"
+import { LanguageContext } from './../context/LanguageContext';
 
 const CartPage = () => {
     const { cart } = useContext(ProductsContext)
+    const { lang } = useContext(LanguageContext)
     return (
         <div className="max-w-[850px] mx-auto pt-10 pb-14 px-4">
-            {cart.length ? <h1 className="text-[40px] font-semibold mb-6">Ваш заказ</h1> : ''}
+            {cart.length ? <h1 className="text-[40px] font-semibold mb-6">{lang.yourOrder}</h1> : ''}
             <div>
                 {
                     cart.length > 0 ? cart.map((card) => <CartCard key={card.id} {...card} />) :

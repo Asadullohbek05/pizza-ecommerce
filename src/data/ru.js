@@ -34,8 +34,8 @@ const RU = {
     ShowBriefly: "Показать кратко",
     Help: "Помощь",
     location: "Москва, ул. Юных Ленинцев, д.99",
-    addToCart: "добавить"
-
+    addToCart: "добавить",
+    yourOrder: 'Ваш заказ',
 }
 
 export default RU
