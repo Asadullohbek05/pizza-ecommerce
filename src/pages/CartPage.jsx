@@ -6,7 +6,7 @@ import cat from "../assets/cat.png"
 const CartPage = () => {
     const { cart } = useContext(ProductsContext)
     return (
-        <div className="max-w-[850px] mx-auto pt-10 pb-14">
+        <div className="max-w-[850px] mx-auto pt-10 pb-14 px-4">
             {cart.length ? <h1 className="text-[40px] font-semibold mb-6">Ваш заказ</h1> : ''}
             <div>
                 {

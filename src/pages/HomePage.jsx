@@ -87,7 +87,7 @@ const HomePage = () => {
                                 <h1 className="text-[28px] sm:text-[40px] font-semibold text-[#191919]">{category.name}</h1>
                                 <button className="flex items-center gap-2 bg-white py-2 px-3 sm:px-4 border text-[16px] rounded-[6px] text-[#191919]"><img src={filterIcon} alt="" /> Фильтры</button>
                             </div>
-                            <div className="flex flex-wrap justify-evenly md:justify-between gap-1">
+                            <div id={category} className="flex flex-wrap justify-evenly md:justify-between gap-1">
                                 {products
                                     .filter(product => product.category === category.name)
                                     .map(filteredProduct => (

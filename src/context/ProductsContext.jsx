@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { createContext, useState, } from "react";
 import products from "../data/Products";
 import { CART } from "../constants";
+import { toast } from "react-toastify";
 
 export const ProductsContext = createContext();
 
@@ -31,6 +32,7 @@ const ProductsContextProvider = ({ children }) => {
         } else {
             product.quantity = 1;
             newCart = [...cart, product]
+            toast.success('Product Added Successfully')
         }
 
         setCart(newCart)
