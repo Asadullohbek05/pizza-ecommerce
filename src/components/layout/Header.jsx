@@ -164,7 +164,7 @@ const Header = () => {
                         }
                     </div>
                 </div>
-                <div className={`fixed ${visible ? 'left-0' : 'left-[-100%]'} w-full h-full bg-white`}>
+                <div className={`fixed ${visible ? 'left-0' : 'left-[-100%]'} w-full h-full bg-white innerNav`}>
                     <button className="flex font-normal w-full p-5  items-center gap-4 text-[16px] text-[#000000] border-b"><img src={profileIcon} alt="profileIcon" /> Войти в аккаунт</button>
                     <ul className="flex flex-col p-5 border-b gap-3">
                         <li>

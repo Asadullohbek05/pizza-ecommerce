@@ -28,3 +28,7 @@ body {
 .ownCard:hover .heartIcon {
   right: 20px;
 }
+
+.innerNav {
+  transition: all 0.5s;
+}
