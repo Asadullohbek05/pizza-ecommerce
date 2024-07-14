@@ -17,7 +17,7 @@ const ControlQuantityBtns = ({ id, quantity }) => {
 
 ControlQuantityBtns.propTypes = {
     id: PropTypes.string,
-    quantity: PropTypes.string
+    quantity: PropTypes.number
 }
 
 export default ControlQuantityBtns

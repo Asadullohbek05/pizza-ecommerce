@@ -6,11 +6,14 @@ import './index.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify'
 import ProductsContextProvider from './context/ProductsContext.jsx'
+import FavouritesContextProvider, { FavouritesContext } from './context/FavouritesContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <LanguageContextProvider>
     <ProductsContextProvider>
-      <App />
+      <FavouritesContextProvider>
+        <App />
+      </FavouritesContextProvider>
     </ProductsContextProvider>
     <ToastContainer autoClose={2000} />
   </LanguageContextProvider>

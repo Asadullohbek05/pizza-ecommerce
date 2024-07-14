@@ -19,6 +19,7 @@ import ProductCard from "../components/card/ProductCard"
 import { useContext, useState } from "react"
 import CartButton from "../components/cartButton/CartButton"
 import { LanguageContext } from "../context/LanguageContext"
+import LikeButton from "../components/likeButton/LikeButton"
 
 const HomePage = () => {
     const { lang } = useContext(LanguageContext)
@@ -114,6 +115,7 @@ const HomePage = () => {
                 </button>
             </div>
             <CartButton />
+            <LikeButton />
         </div>
     )
 }

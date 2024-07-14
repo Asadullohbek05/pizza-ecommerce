@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
+import { FaRegHeart } from 'react-icons/fa';
 
 import locationIcon from "../../assets/svg/Location.svg";
 import profileIcon from "../../assets/svg/Account.svg";
@@ -14,9 +15,11 @@ import facebook from "../../assets/svg/facebook.svg"
 import instagram from "../../assets/svg/instagram.svg"
 import { LanguageContext } from "../../context/LanguageContext";
 import { ProductsContext } from "../../context/ProductsContext";
+import { FavouritesContext } from "../../context/FavouritesContext";
 
 const Header = () => {
-    const { cart, isRunning, setIsRunning } = useContext(ProductsContext)
+    const { cart, isRunning } = useContext(ProductsContext)
+    const { favourites } = useContext(FavouritesContext)
     const { lang, langType, changeLanguage } = useContext(LanguageContext)
     const [scrollHeight, setScrollHeight] = useState(0);
     const [visible, setVisible] = useState(false)
@@ -105,7 +108,7 @@ const Header = () => {
             </div>
             <div className={`transition border-b sticky top-0`}>
                 <div className="max-w-[1330px] px-5 mx-auto ">
-                    <div className="py-4 flex gap-3 items-center justify-between">
+                    <div className="py-4 flex gap-4 items-center justify-between">
                         <Link className="flex items-center gap-3" to={'/'}><img src={logoIcon} alt="Logo icon" /></Link>
                         <div className="hidden lg:block">
                             <ul className={`flex items-center gap-7 ${scrollHeight > 44 ? 'block' : 'hidden'}`}>
@@ -151,7 +154,10 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
-                        <Link to='/cart' className="bg-[#FF7010] hidden lg:flex items-center justify-center px-4 py-2 w-[70px] gap-2 rounded text-white text-[16px]"><img src={shoppingBag} alt="Shopping bag" /> {cart.length}</Link>
+                        <div className="flex items-center gap-2 ">
+                            <Link to='/favourites' className="bg-[#FF7010] hidden lg:flex px-4 py-[8px]  items-center gap-2 rounded text-white text-[17px]"><FaRegHeart color="white" size={20} />{favourites.length}</Link>
+                            <Link to='/cart' className="bg-[#FF7010] hidden lg:flex items-center justify-center px-4 py-2 w-[70px] gap-2 rounded text-white text-[16px]"><img src={shoppingBag} alt="Shopping bag" /> {cart.length}</Link>
+                        </div>
                         {
                             visible ? <button onClick={toggleNav} className="lg:hidden"><img width={32} height={20} src={closeIcon} alt="" /></button>
                                 : <button onClick={toggleNav} className="lg:hidden"><img width={32} height={20} src={hamburgerBtn} alt="" /></button>

@@ -7,7 +7,7 @@ import { ProductsContext } from './../../context/ProductsContext';
 const CartButton = () => {
     const { cart } = useContext(ProductsContext)
     return (
-        <div className="fixed flex sm:hidden items-center justify-center rounded-full right-5 bottom-5 w-14 h-14 bg-[#FF7010] shadow-2xl">
+        <div className="fixed flex lg:hidden items-center justify-center rounded-full right-5 bottom-5 w-14 h-14 bg-[#FF7010] shadow-2xl">
             <div className="relative">
                 <Link to={'/cart'}>
                     <img src={shoppingBag} alt="" />

@@ -44,7 +44,9 @@ const UZ = {
     thanks: "Buyurtma uchun rahmat!",
     thanksText: "Taxminan etkazib berish vaqti 45 daqiqa.Quyidagi tugmani bosish orqali holatingizni kuzatishingiz mumkin.",
     trackOrder: "Buyurtmangizni kuzatib boring",
-    empty: "Sizning savatingizda hozircha hech qanday mahsulot yo'q :("
+    empty: "Sizning savatingizda hozircha hech qanday mahsulot yo'q :(",
+    favourite: "mahsulot sevimlilar bo'limiga qo'shildi",
+    unFavourite: "mahsulot sevimlilar bo'limidan olib tashlandi"
 }
 
 export default UZ
