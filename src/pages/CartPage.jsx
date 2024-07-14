@@ -29,7 +29,7 @@ const CartPage = () => {
 
     return (
         <div className="max-w-[850px] mx-auto pt-10 pb-14 px-4 text-center">
-            {cart.length ? <h1 className="text-[40px] text-left font-semibold mb-6">{lang.yourOrder}</h1> : ''}
+            {cart.length ? <h1 className="text-[28px] sm:text-[40px] text-left font-semibold mb-6">{lang.yourOrder} ({cart.length})</h1> : ''}
             <div>
                 {
                     cart.length > 0 ? cart.map((card) => <CartCard key={card.id} {...card} />) :
@@ -51,7 +51,7 @@ const CartPage = () => {
                             </div>
                             <h2 className="text-[18px] sm:text-[20px] text-[#FF7010] mt-4 sm:mt-0 text-center font-semibold">{lang.total}: {totalSumm} ₽</h2>
                         </form>
-                        <button onClick={handleOrder} type="button" className="mt-10 bg-[#FF7010] text-white py-[13px] px-[24px] rounded-[6px] mx-auto">Оформить заказ</button>
+                        <button onClick={handleOrder} type="button" className="mt-10 bg-[#FF7010] text-white py-[13px] px-[24px] rounded-[6px] mx-auto">{lang.Checkout}</button>
                     </>
                     : ''
             }

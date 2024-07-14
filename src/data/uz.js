@@ -46,7 +46,9 @@ const UZ = {
     trackOrder: "Buyurtmangizni kuzatib boring",
     empty: "Sizning savatingizda hozircha hech qanday mahsulot yo'q :(",
     favourite: "mahsulot sevimlilar bo'limiga qo'shildi",
-    unFavourite: "mahsulot sevimlilar bo'limidan olib tashlandi"
+    unFavourite: "mahsulot sevimlilar bo'limidan olib tashlandi",
+    yourLikedProducts: 'Sevimli Mahsulotlar',
+    Checkout: "Buyurtmani rasmiylashtirish",
 }
 
 export default UZ

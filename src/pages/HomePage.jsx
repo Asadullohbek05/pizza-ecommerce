@@ -36,31 +36,31 @@ const HomePage = () => {
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={fireIcon} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.stock}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/pizza' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={pizza} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.pizza}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/sushi' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={sushi} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.sushi}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/drinks' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={drink} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.beverages}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/snacks' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={snacks} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.snacks}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/combo' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={combo} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.combo}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/deserts' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={desert} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.dessert}</span>
                 </Link>
-                <Link className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
+                <Link to='/sauces' className="flex sm:flex-col justify-center items-center hover:text-[#E23535] transition bg-white gap-2 px-6 sm:px-10 py-2 sm:py-5 w-[150px] sm:w-[135px] border rounded-[6px] sm:rounded-[12px]">
                     <img className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px]" src={souse} alt="" />
                     <span className="text-[14px] sm:text-[18px]">{lang.sauces}</span>
                 </Link>

@@ -116,25 +116,25 @@ const Header = () => {
                                     <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.stock}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.pizza}</Link>
+                                    <Link to={'/pizza'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.pizza}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.sushi}</Link>
+                                    <Link to={'/sushi'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.sushi}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.beverages}</Link>
+                                    <Link to={'/drinks'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.beverages}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.snacks}</Link>
+                                    <Link to={'/snacks'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.snacks}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.combo}</Link>
+                                    <Link to={'/combo'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.combo}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.dessert}</Link>
+                                    <Link to={'/deserts'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.dessert}</Link>
                                 </li>
                                 <li>
-                                    <Link to={'/'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.sauces}</Link>
+                                    <Link to={'/causes'} className="transition text-[#191919] font-normal hover:text-[#ff7010] text-[17px]">{lang.sauces}</Link>
                                 </li>
                                 <li>
                                     <div className="dropdown dropdown-hover">

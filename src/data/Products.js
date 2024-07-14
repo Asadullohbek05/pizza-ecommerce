@@ -229,7 +229,7 @@ const products = [
         price: 395,
     },
     {
-        id: "sauce-1",
+        id: "Snacks-1",
         category: "Закуски",
         filter: "New",
         image: "/products/snacks/snack-img-1.png",
@@ -239,7 +239,7 @@ const products = [
         price: 475,
     },
     {
-        id: "sauce-2",
+        id: "Snacks-2",
         category: "Закуски",
         filter: "Xit",
         image: "/products/snacks/snack-img-2.png",
@@ -249,7 +249,7 @@ const products = [
         price: 395,
     },
     {
-        id: "sauce-3",
+        id: "Snacks-3",
         category: "Закуски",
         filter: "",
         image: "/products/snacks/snack-img-3.png",
@@ -258,7 +258,7 @@ const products = [
         price: 425,
     },
     {
-        id: "sauce-4",
+        id: "Snacks-4",
         category: "Закуски",
         filter: "",
         image: "/products/snacks/snack-img-4.png",
@@ -267,7 +267,7 @@ const products = [
         price: 525,
     },
     {
-        id: "sauce-5",
+        id: "Snacks-5",
         category: "Закуски",
         filter: "",
         image: "/products/snacks/snack-img-5.png",
@@ -276,7 +276,7 @@ const products = [
         price: 525,
     },
     {
-        id: "sauce-6",
+        id: "Snacks-6",
         category: "Закуски",
         filter: "",
         image: "/products/snacks/snack-img-6.png",
@@ -285,7 +285,7 @@ const products = [
         price: 425,
     },
     {
-        id: "sauce-7",
+        id: "Snacks-7",
         category: "Закуски",
         filter: "",
         image: "/products/snacks/snack-img-7.png",
@@ -295,7 +295,7 @@ const products = [
         price: 395,
     },
     {
-        id: "sauce-8",
+        id: "Snacks-8",
         category: "Закуски",
         filter: "",
         image: "/products/snacks/snack-img-8.png",

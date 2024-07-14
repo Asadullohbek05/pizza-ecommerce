@@ -46,7 +46,9 @@ const RU = {
     trackOrder: "Отследить заказ",
     empty: "В вашей корзине на данный момент нет товаров :(",
     favourite: "товар добавлен в избранное",
-    unFavourite: 'товар удален из избранного'
+    unFavourite: 'товар удален из избранного',
+    yourLikedProducts: 'Избранные продукты',
+    Checkout: "Оформить заказ",
 }
 
 export default RU
