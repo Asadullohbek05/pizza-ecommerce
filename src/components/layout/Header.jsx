@@ -165,43 +165,43 @@ const Header = () => {
                     </div>
                 </div>
                 <div className={`fixed ${visible ? 'left-0' : 'left-[-100%]'} w-full h-full bg-white innerNav`}>
-                    <button className="flex font-normal w-full p-5  items-center gap-4 text-[16px] text-[#000000] border-b"><img src={profileIcon} alt="profileIcon" /> Войти в аккаунт</button>
+                    <button className="flex font-normal w-full p-5  items-center gap-4 text-[16px] text-[#000000] border-b"><img src={profileIcon} alt="profileIcon" /> {lang.loginAccount}</button>
                     <ul className="flex flex-col p-5 border-b gap-3">
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Акции</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.stock}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">О компании</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.aboutCompany}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Пользовательское соглашение</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.termsOfUse}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Условия гарантии</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.warrantTterms}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Ресторан</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.restaurant}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Контакты</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.contacts}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Поддержка</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.support}</Link>
                         </li>
                         <li>
-                            <Link to={'/'} className="text-[#191919] text-[16px]">Отследить заказ</Link>
+                            <Link to={'/'} className="text-[#191919] text-[16px]">{lang.trackYourOrder}</Link>
                         </li>
                     </ul>
                     <div className="flex flex-col gap-3 p-5">
                         <p className="flex gap-3 text-[#191919] text-[14px]"><img src={phoneIcon} alt="" /> +7 (926) 223-10-11</p>
-                        <p className="flex gap-4 text-[#191919] text-[14px]"><img src={location2} alt="" /> Москва, ул. Юных Ленинцев, д.99</p>
+                        <p className="flex gap-4 text-[#191919] text-[14px]"><img src={location2} alt="" /> {lang.location}</p>
                         <div className="flex gap-6">
                             <Link className="flex gap-3 text-[#191919] text-[14px]"><img src={facebook} alt="" /> Facebook</Link>
                             <Link className="flex gap-3 text-[#191919] text-[14px]"><img src={instagram} alt="" /> Instagram</Link>
                         </div>
                     </div>
                     <div className="border-t border-b text-center py-4">
-                        <p className="text-[#A5A5A5] font-normal">Время работы: c 11:00 до 23:00</p>
+                        <p className="text-[#A5A5A5] font-normal">{lang.openingHours}</p>
                     </div>
                 </div>
             </div>
